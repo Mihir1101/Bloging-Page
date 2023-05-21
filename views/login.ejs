@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+        body{
+            background-color: #FFFBF5;
+            font-family: 'Oswald', sans-serif;
+            max-height: 100%;
+            margin: none;
+            padding: none;
+        }
+        div{
+            border: 2px solid #674188;
+            background-color: #C3ACD0;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 40px;
+            margin-left: 400px;
+            margin-right: 400px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 20px;
+
+        }
+        div > h2{
+            font-size: 82px;
+            padding: none;
+            margin: 20px;
+        }
+        div > form > span {
+            font-size: 22px;
+        }
+
+        .inputs{
+            width: 280px;
+            height: 31px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            color: #C3ACD0;
+            padding: 6px;
+            border: 0.5px solid #674188;
+            border-radius: 12px;
+        }
+        .btn{
+            height: 31px;
+            width: 100px;
+            border-radius: 12px;
+            border: none;
+            background-color: #674188;
+            border: 1px solid #C3ACD0;
+            color: #FFFBF5;
+            
+        }
+        .btn:hover{
+            background-color: #FFFBF5;
+            border: 1px solid #674188;
+            color: #674188;
+        }
+        
+    </style>
+    <script>
+        function myFunction(){
+            let x = document.getElementById("myPass");
+            if (x.type == "password"){
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h2>Sign In</h2>
+        <form action="/login" method="POST">
+            <span>Email:</span><br>
+            <input type="text" placeholder="Enter Email" class="inputs" name="email">
+            <br>
+            <span>Password:</span><br>
+            <input type="password" placeholder="Enter Password" class="inputs"name="password">
+            <br>
+            <input type="checkbox" onclick="myFunction()"> Show Password
+            <br>
+            <input type="submit" value="Log In" class="btn">
+        </form>
+        <p>Don`t have an account !
+            <a href="/register">Sign Up</a>
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Own Blog</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+
+        body{
+            padding-left: 50px;
+            padding-right: 50px;
+            margin: none;
+            background-color:#FFFBF5;
+            font-family: 'Oswald', sans-serif;
+        }
+        label:hover{
+            cursor: pointer;
+        }
+        #addImg{
+            height: 40px;
+            width: 40px;
+        }
+        form{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        #title{
+            font-size: 16px; 
+            border: 2px solid #674188;
+            padding: 10px;
+            flex: 80%;
+            background-color: #C3ACD0;
+            border-radius: 12px;
+        }
+        #lable{
+            padding-right:10px ;
+            flex: 2%;
+        }
+        #publish{
+            flex: 10%;
+            margin-left: 20px;
+            background-color: #674188;
+            color: #C3ACD0;
+            border: none;
+            border-radius: 8px;
+        }
+        #publish:hover{
+            cursor: pointer;
+            background-color: #C3ACD0;
+            color: #674188;
+        }
+        #discription{
+            width: 70%;
+            margin-top: 20px;
+            font-size: 16px; 
+            border: 2px solid #674188;
+            padding: 10px;
+            flex: 100%;
+            height:fit-content;
+            background-color: #C3ACD0;
+            border-radius: 12px;
+        }
+        #blogImg{
+            width: 100%;
+            flex: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            margin: 10px;
+            margin-left: 0px;
+            margin-right: 0px;
+            border-radius: 22px;
+        }
+        #autherName{
+            font-size: 16px; 
+            border: 2px solid #674188;
+            padding: 10px;
+            margin-top: 10px;
+            flex: 30%;
+            background-color: #C3ACD0;
+            border-radius: 12px;
+        }
+    </style>
+    <script>
+        function changeImg(){
+            document.getElementById("blogImg").src = document.getElementById("fileInput").value;
+        }
+    </script>
+</head>
+<body>
+    <form action="/createBlog" method="POST">
+        <img src="https://img.lovepik.com/background/20211021/large/lovepik-purple-technology-lines-background-image_401699545.jpg" id="blogImg" >
+        <label for="fileInput" id="lable">
+            <img id="addImg" src="https://cdn-icons-png.flaticon.com/128/1828/1828919.png">
+        </label>
+        <input type="file" id="fileInput" style = "display:none;" onchange="changeImg()">
+        <input type="text" placeholder="Title" id="title" name="title">
+        <input type="submit" value="Publish" id="publish">
+        <textarea id="discription" cols="30" rows="10" placeholder= "Start Your Blog Here....." name="discription"></textarea>
+        <div style="align-items: center;">
+            <input type="text" placeholder="Author Name" id="autherName" name="username">
+
+        </div>
+    </form>
+    <span></span>
+
+</body>
+</html>
